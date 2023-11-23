@@ -1,5 +1,4 @@
 import greenfoot.*;
-
 /**
  * Write a description of class MyWorld here.
  * 
