@@ -18,5 +18,14 @@ public class MyWorld extends World
         super(600, 400, 1);
 
         Elephant elephant = new Elephant();
+        addObject(elephant,300,300);
+
+        Apple apple = new Apple();
+        Apple apple2 = new Apple();
+        Apple apple3 = new Apple();
+        Apple apple4 = new Apple();
+        Apple apple5 = new Apple();
+        GrnApple grnApple = new GrnApple();
+        
     }
 }
