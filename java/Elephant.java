@@ -2,11 +2,15 @@ import greenfoot.*;
 /**
  * Write a description of class elephant here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author dominique 
+ * @version v1.0
  */
 public class Elephant extends Actor
 {
+    public Elephant(){
+        
+    }
+
     public void act(){
         move(1);
     }
