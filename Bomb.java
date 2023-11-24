@@ -1,19 +1,27 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
  * Write a description of class Bomb here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Dominique
+ * @version v1.0
  */
-public class Bomb extends Actor
+public class Bomb extends Objs
 {
-    /**
-     * Act - do whatever the Bomb wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        boom();
+        fall();
+        
+    }
+    
+    private void boom(){
+        if(isTouching(Elephant.class)){
+            MyWorld world = (MyWorld) getWorld();
+            world.gameover = true;
+        }
+    }
+    
+    void fall(){
+        setLocation(getX(),getY()+4);
     }
 }

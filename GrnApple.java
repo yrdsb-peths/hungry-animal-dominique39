@@ -1,19 +1,24 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
  * Write a description of class GrnApple here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Dominique
+ * @version v1.0
  */
-public class GrnApple extends Actor
+public class GrnApple extends Apple
 {
-    /**
-     * Act - do whatever the GrnApple wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public GrnApple(){
+        super();
     }
+    
+    private void eaten(){
+        if(isTouching(Elephant.class)){
+            MyWorld world = (MyWorld) getWorld();
+            world.addscore();
+            world.addscore();
+            setLocation(Greenfoot.getRandomNumber(600),0);
+        }
+    }
+    
+    
 }
