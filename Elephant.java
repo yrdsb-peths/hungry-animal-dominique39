@@ -50,6 +50,14 @@ public class Elephant extends Actor
             move(moveVelocity);
             facing = 1;
         }
+        
+        if(getX() <= 1){
+            setLocation(590, getY());
+        }
+        
+        if(getX() >= 599){
+            setLocation(1, getY());
+        }
     }
     
     private void animate(){
