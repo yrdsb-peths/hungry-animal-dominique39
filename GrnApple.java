@@ -13,8 +13,10 @@ public class GrnApple extends Apple
 
     public void act()
     {
-        fall();
-        eaten();
+        if(MyWorld.running = true){
+            fall();
+            eaten();
+        }
     }
 
     private void eaten(){

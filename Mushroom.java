@@ -7,40 +7,41 @@ import greenfoot.*;
  */
 public class Mushroom extends Falling_Objs
 {
-    /*private boolean mushroomBoost = false;
+    private boolean mushroomBoost = false;
     private int mushroomBoostTime = 0;
 
     public void act()
     {
-        fall();
-        eaten();
-        boostTimeCountdown();
+        if(MyWorld.running = true){
+            eaten();
+            boostTimeCountdown();
+            fall();
+        }
     }
 
     void fall(){
         setLocation(getX(),getY()+4);
         if(getY() >= 795){
-            MyWorld world = (MyWorld) getWorld();
-            world.removeMushroom();
+            World world = (MyWorld) getWorld();
+            world.removeObject(this);
         }
     }
 
     private void eaten(){
         if(isTouching(Elephant.class)){
-            MyWorld world = (MyWorld) getWorld();
-            world.removeMushroom();
             mushroomBoost = true;
             mushroomBoostTime = 1000*15;
-            world.attractObjs();
         }
     }
 
     private void boostTimeCountdown() {
         if(mushroomBoost == true){
             mushroomBoostTime--;
+            MyWorld world = (MyWorld) getWorld();
+            world.attractObjs();
             if(mushroomBoostTime <= 0){
                 mushroomBoost = false;
             }
         }
-    }*/
+    }
 }

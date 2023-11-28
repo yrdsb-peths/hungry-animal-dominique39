@@ -7,17 +7,18 @@ import greenfoot.*;
  */
 public class Bomb extends Falling_Objs
 {
-    /*
     public void act()
     {
-        boom();
-        fall();
+        if(MyWorld.running = true){
+            boom();
+            fall();
+        }
     }
 
     private void boom(){
         if(isTouching(Elephant.class)){
             MyWorld world = (MyWorld) getWorld();
-            world.gameOver();
+            world.gameover();
         }
-    }*/
+    }
 }

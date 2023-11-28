@@ -33,9 +33,11 @@ public class Elephant extends Actor
     }
 
     public void act(){
-        move();
-        animate();
-        mushroomBoost();
+        if(MyWorld.running = true){
+            move();
+            animate();
+            mushroomBoost();
+        }
     }
 
     private void move(){

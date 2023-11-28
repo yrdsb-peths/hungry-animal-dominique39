@@ -10,6 +10,7 @@ import java.util.*;
 public class MyWorld extends World
 {
     private int score = 0;
+    public static boolean running = true;
 
     Bomb bomb = new Bomb();
     Elephant elephant = new Elephant();
@@ -49,14 +50,16 @@ public class MyWorld extends World
     }
 
     public void act(){
-        if(bombtimer.millisElapsed() > 1000*15){
-            addObject(bomb, Greenfoot.getRandomNumber(1200),0);
-            bombtimer.mark();
-        }
+        if(MyWorld.running = true){
+            if(bombtimer.millisElapsed() > 1000*5){
+                addObject(bomb, Greenfoot.getRandomNumber(1200),0);
+                bombtimer.mark();
+            }
 
-        if(mushtimer.millisElapsed() > 1000*30){
-            addObject(mushroom, Greenfoot.getRandomNumber(1200),0);
-            mushtimer.mark();
+            if(mushtimer.millisElapsed() > 1000*10){
+                addObject(mushroom, Greenfoot.getRandomNumber(1200),0);
+                mushtimer.mark();
+            }
         }
     }
 
@@ -77,12 +80,8 @@ public class MyWorld extends World
             }
         }
     }
-    
-    public void removeMushroom(){
-        removeObject(mushroom);
-    }
 
-    public void gameOver(){
-
+    public void gameover(){
+        running = false;
     }
 }
