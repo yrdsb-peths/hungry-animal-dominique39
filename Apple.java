@@ -29,8 +29,10 @@ public class Apple extends Falling_Objs
 
     public void act()
     {
-        fall();
-        eaten();
+        if(MyWorld.running = true){
+            eaten();
+            fall();
+        }
     }
 
     private void eaten(){
