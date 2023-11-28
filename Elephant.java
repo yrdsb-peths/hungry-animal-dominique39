@@ -8,77 +8,81 @@ import greenfoot.*;
 public class Elephant extends Actor
 {
     MyWorld world = (MyWorld) getWorld();
-    
+
     //animate
-    GreenfootImage[] leftIdle = new GreenfootImage[8];
+    GreenfootImage[] left = new GreenfootImage[8];
+    GreenfootImage[] right = new GreenfootImage[8];
     private int imageIndex = 0;
     private int facing;
-    
+
     //move
     private int moveVelocity = 4;
-    
+
     private int boostTime = 0;
-    
+
     public Elephant(){        
         //images initiation
         for(int i = 0; i < 8; i++){
-            leftIdle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            leftIdle[i].mirrorHorizontally();
+            left[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            right[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            left[i].scale(100,100);
+            right[i].scale(100,100);
+            left[i].mirrorHorizontally();
         }
         setImage("images/elephant_idle/idle0.png");
     }
-    
+
     public void act(){
         move();
         animate();
         mushroomBoost();
     }
-    
+
     private void move(){
         if(Greenfoot.isKeyDown("shift")){
             moveVelocity = 8;
         }else{
             moveVelocity = 4;
         }
-        
+
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")){
             move(-moveVelocity);
             facing = -1;
         }
-        
+
         if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
             move(moveVelocity);
             facing = 1;
         }
-        
+
         if(getX() <= 1){
-            setLocation(590, getY());
+            setLocation(1190, getY());
         }
-        
-        if(getX() >= 599){
+
+        if(getX() >= 1199){
             setLocation(1, getY());
         }
     }
-    
+
     private void animate(){
         imageIndex += 1;
         if(imageIndex>=70){
             imageIndex = 0;
         }
-        
+
         if(facing < 0){
-            setImage(leftIdle[imageIndex/10]);
+            setImage(left[imageIndex/10]);
         }else{
-            setImage("images/elephant_idle/idle" + imageIndex/10 + ".png");
+            setImage(right[imageIndex/10]);
         }
     }
-    
+
     private void mushroomBoost(){
         if(isTouching(Mushroom.class)){
             removeTouching(Mushroom.class);
             boostTime = 900;
         }
-        
+
         if(boostTime > 0){
             boostTime--;
             MyWorld world = (MyWorld) getWorld();

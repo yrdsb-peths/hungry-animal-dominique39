@@ -10,7 +10,13 @@ public class GrnApple extends Apple
     public GrnApple(){
         super();
     }
-    
+
+    public void act()
+    {
+        fall();
+        eaten();
+    }
+
     private void eaten(){
         if(isTouching(Elephant.class)){
             MyWorld world = (MyWorld) getWorld();
@@ -19,6 +25,5 @@ public class GrnApple extends Apple
             setLocation(Greenfoot.getRandomNumber(600),0);
         }
     }
-    
-    
+
 }

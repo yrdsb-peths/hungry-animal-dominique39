@@ -10,9 +10,9 @@ public class Bg extends Actor
     public Bg(){
         setImage("bg/Ocean_4/5.png");    
     }
-    
+
     public void act()
     {
-        
+
     }
 }
