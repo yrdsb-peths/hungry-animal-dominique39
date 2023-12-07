@@ -9,7 +9,7 @@ public class Bomb extends Falling_Objs
 {
     public void act()
     {
-        if(MyWorld.running = true){
+        if(Game.running == true){
             boom();
             fall();
         }
@@ -17,7 +17,7 @@ public class Bomb extends Falling_Objs
 
     private void boom(){
         if(isTouching(Elephant.class)){
-            MyWorld world = (MyWorld) getWorld();
+            Game world = (Game) getWorld();
             world.gameover();
         }
     }

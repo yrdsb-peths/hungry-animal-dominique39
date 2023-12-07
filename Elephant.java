@@ -1,13 +1,8 @@
 import greenfoot.*;
-/**
- * Write a description of class elephant here.
- * 
- * @author Dominique
- * @version v1.0
- */
+
 public class Elephant extends Actor
 {
-    MyWorld world = (MyWorld) getWorld();
+    Game world = (Game) getWorld();
 
     //animate
     GreenfootImage[] left = new GreenfootImage[8];
@@ -33,10 +28,14 @@ public class Elephant extends Actor
     }
 
     public void act(){
-        if(MyWorld.running = true){
+        if(Game.running == true){
             move();
             animate();
             mushroomBoost();
+        }
+        
+        if(Title.demo == true){
+            animate();
         }
     }
 
@@ -87,7 +86,7 @@ public class Elephant extends Actor
 
         if(boostTime > 0){
             boostTime--;
-            MyWorld world = (MyWorld) getWorld();
+            Game world = (Game) getWorld();
             world.attractObjs();
         }
     }
