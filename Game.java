@@ -39,7 +39,7 @@ public class Game extends World
         //score label
         scoreLabel = new Label("Score: " + score, 50);
         scoreLabel.setFillColor(Color.WHITE);
-        addObject(scoreLabel, 1050, 50);
+        addObject(scoreLabel, 100, 50);
     }
 
     public void act(){
