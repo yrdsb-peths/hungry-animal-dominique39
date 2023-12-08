@@ -19,7 +19,7 @@ public class Game extends World
 
     public Game(){    
         super(1200, 800, 1, true);
-
+        setPaintOrder(Label.class);
         addObject(character,600,720);
         for(int i = 0; i < apples.length;i++){
             apples[i] = new Apple();

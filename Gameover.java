@@ -56,8 +56,7 @@ public class Gameover extends World
         instructionLabel = null;
         allObjects = null;
         
-        Title world = new Title();
+        Game world = new Game();
         Greenfoot.setWorld(world);
-        Greenfoot.delay(60);
     }
 }
