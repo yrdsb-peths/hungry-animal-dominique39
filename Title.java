@@ -55,9 +55,9 @@ public class Title extends World
         character = null;
         food = null;
 
+        demo = false;
         Game world = new Game();
         Greenfoot.setWorld(world);
         Game.running = true;
-        demo = false;
     }
 }
